@@ -15,7 +15,7 @@ public class Secant_method {
 	}
 	
 	
-	public static double brain(double a, double b) {
+	public static double motorFunction(double a, double b) {
 		
 		double result = secant(a,b);
 		
@@ -34,7 +34,7 @@ public class Secant_method {
 	}
 	
 	public static void main(String[] args) {
-		double mainResult = brain(0,1);  // 0 and 1 is default values.
+		double mainResult = motorFunction(0,1);  // 0 and 1 is default values.
 		System.out.print(mainResult);
 	}
 }
