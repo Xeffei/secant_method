@@ -1,42 +1,24 @@
+package numericalanalysis;
 
-public class Secant_method {
+public class secant_method // write here your own class folder name.
+	{
+	
+	public static double func(double a) {
+		return (Math.PI*a)-(0.002)/(a*a); // write your own function here.
+		
+	}
+	
+	
+	public static double secant(double x0, double x1) {
+		double x2;
+		while(true) {	
+				x2  =   x1 - ((( func(x1) *( x0-x1 ) ) / ( func(x0)-func(x1) )));
+				if(Math.abs(x2-x1)<0.00001) {break;}
+					else {
+						x0=x1;
+						x1=x2;}}	
+		return x2;}
 
-	public static double result;
-	public static double fonksiyon(double x) {
-		result = x*x-5*x+1; // it was my function write here your own.
-		return result;
-	}
-	
-	public static double secant(double x,double x1) {
-		
-		double xn1 = x- fonksiyon(x)*(x1-x)/(fonksiyon(x1)-fonksiyon(x));
-		
-		return xn1;
-	}
-	
-	
-	public static double motorFunction(double a, double b) {
-		
-		double result = secant(a,b);
-		
-		while(true) {
-			if(Math.abs(fonksiyon(result)-fonksiyon(a))<0.001||Math.abs(fonksiyon(result-fonksiyon(b)))<0.001) {
-				
-				return result;
-			
-			
-			}
-			else {
-				System.out.print(result);
-				secant(b,result);
-			}
-		}
-	}
-	
 	public static void main(String[] args) {
-		double mainResult = motorFunction(0,1);  // 0 and 1 is default values.
-		System.out.print(mainResult);
-	}
-}
-
-
+		System.out.print(secant(0.01, 2)); // 0.01 and 2 my default values.
+}}
