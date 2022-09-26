@@ -3,12 +3,12 @@ public class Secant_method {
 
 	public static double result;
 	public static double fonksiyon(double x) {
-		result = x*x-5*x+1;
-		
+		result = x*x-5*x+1; // it was my function write here your own.
 		return result;
 	}
 	
 	public static double secant(double x,double x1) {
+		
 		double xn1 = x- fonksiyon(x)*(x1-x)/(fonksiyon(x1)-fonksiyon(x));
 		
 		return xn1;
@@ -29,23 +29,14 @@ public class Secant_method {
 			else {
 				System.out.print(result);
 				secant(b,result);
-			
 			}
+		}
 	}
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	public static void main(String[] args) {
-		double aa = brain(0,1);
-		System.out.print(aa);
-}}
+		double mainResult = brain(0,1);  // 0 and 1 is default values.
+		System.out.print(mainResult);
+	}
+}
 
 
